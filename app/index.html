@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <title>Template Builder</title>
+
+    <link href="bower_components/angular-material/angular-material.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body ng-cloak>
+
+    <md-content layout="column" ng-controller="templateCtrl as vm" flex class="full-height">
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h3>Template Editor</h3>
+            </div>
+        </md-toolbar>
+
+        <div layout="row" flex class="full-height">
+
+            <section flex class="full-height">
+                <md-subheader>Template</md-subheader>
+                <div ui-ace="{
+                                require: ['ace/ext/language_tools'],
+                                useWrapMode : true,
+                                mode: 'html',
+                                advanced: {
+                                    enableBasicAutocompletion: true
+                                },
+                                onLoad: vm.onTemplateContentLoad,
+                                onChange: vm.onTemplateContentChange }" class="ace_editor_template" ng-model="vm.template"></div>
+            </section>
+
+            <section layout="column" flex class="full-height">
+
+                <div flex="40" class="content-wrapper">
+                    <md-subheader>Source</md-subheader>
+                    <div ui-ace="{
+                             useWrapMode : true,
+                             mode: 'javascript',
+                             onLoad: vm.onModelContentLoad,
+                             onChange: vm.onModelContentChange }" class="ace_editor_sample" ng-model="vm.source"></div>
+                </div>
+                <div flex="60" class="content-wrapper">
+                    <md-subheader>View</md-subheader>
+                    <iframe id="visualization" iframe-injector content="{{ vm.view }}"></iframe>
+                </div>
+
+            </section>
+
+        </div>
+
+    </md-content>
+
+    <script src="bower_components/angular/angular.js"></script>
+
+    <script src="bower_components/ace-builds/src-noconflict/ace.js"></script>
+    <script src="bower_components/ace-builds/src-noconflict/ext-language_tools.js"></script>
+
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+
+    <script src="bower_components/angular-ui-ace/ui-ace.js"></script>
+    <script src="bower_components/handlebars/handlebars.js"></script>
+
+    <script src="scripts/app.module.js"></script>
+
+    <script src="scripts/shared/config.js"></script>
+    <script src="scripts/shared/directives.js"></script>
+
+    <script src="scripts/components/template/template.ctrl.js"></script>
+
+</body>
+</html>

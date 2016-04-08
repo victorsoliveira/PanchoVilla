@@ -1,0 +1,20 @@
+{
+  "name": "template-builder",
+  "description": "",
+  "main": "app/main.js",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.0.7",
+    "angular-ui-ace": "^0.2.3",
+    "handlebars": "^4.0.5"
+  }
+}
