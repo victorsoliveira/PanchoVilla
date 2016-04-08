@@ -1,6 +1,5 @@
 {
   "name": "TemplateBuilder",
-  "productName": "Template Builder",
   "description": "Handlebars based template builder",
   "version": "0.0.0",
   "author": "CONSTANT",
