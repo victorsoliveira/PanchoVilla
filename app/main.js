@@ -13,9 +13,11 @@ var mainWindow = null;
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
+
     if (process.platform != 'darwin') {
         app.quit();
     }
+
 });
 
 // This method will be called when Electron has finished

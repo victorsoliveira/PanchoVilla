@@ -15,6 +15,7 @@
         var sampleEditor, templateEditor;
 
         angular.extend(vm, {
+            source: "",
             template: "",
             view: "",
 
@@ -35,8 +36,6 @@
         function onModelContentLoad(editor) {
             editor.$blockScrolling = "Infinity";
             sampleEditor = editor;
-
-
         }
 
         function onTemplateContentChange() {
@@ -53,8 +52,15 @@
             var template = handlebars.compile(templateEditor.getSession().getValue());
 
             try {
-                var json = JSON.parse(vm.source);
+
+                var json = {};
+
+                if (vm.source && vm.source != ""){
+                    json = JSON.parse(vm.source);
+                }
+
                 vm.view = template(json);
+
             } catch (e) {
 
             }
