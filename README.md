@@ -1,2 +1,2 @@
 # PanchoVilla
-Simple HandlebarsJs Viewer and Testes
+Simple HandlebarsJs Viewer and Tester
