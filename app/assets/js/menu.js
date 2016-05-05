@@ -4,21 +4,21 @@
 
 var template = [
     {
-        label: 'Template Builder',
-        submenu: [
-            {
-                label: 'About Template Builder',
-                selector: 'orderFrontStandardAboutPanel:'
-            },
-            {
-                type: 'separator'
-            },
-            {
-                label: 'Quit',
-                accelerator: 'Command+Q',
-                selector: 'terminate:'
-            }
-        ]
+        //label: 'Template Builder',
+        //submenu: [
+        //    {
+        //        label: 'About Template Builder',
+        //        selector: 'orderFrontStandardAboutPanel:'
+        //    },
+        //    {
+        //        type: 'separator'
+        //    },
+        //    {
+        //        label: 'Quit',
+        //        accelerator: 'Command+Q',
+        //        selector: 'terminate:'
+        //    }
+        //]
     }
 ];
 

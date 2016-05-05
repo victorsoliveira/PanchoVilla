@@ -9,6 +9,7 @@
     .config(['$provide', '$mdThemingProvider', function ($provide, $mdThemingProvider) {
 
         $provide.constant('handlebars', window.Handlebars);
+        $provide.constant('moment', window.moment);
 
         $mdThemingProvider.theme('default')
             .primaryPalette('blue-grey', {

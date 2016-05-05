@@ -5,6 +5,10 @@
 (function () {
     'use strict';
 
-    angular.module('app', ['ngMaterial', 'ui.ace']);
+    var app =angular.module('app', ['ngMaterial', 'ui.ace']);
+
+    app.run(['handlebarsHelpers', function(handlebarsHelpers){
+        handlebarsHelpers.register();
+    }]);
 
 })();

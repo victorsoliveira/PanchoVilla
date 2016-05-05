@@ -5,6 +5,8 @@
 var app = require('app');
 var Menu = require('menu');
 
+require('electron-debug')();
+
 var defaultMenuTemplate = require('./assets/js/menu');
 
 // Module to create native browser window.
@@ -24,7 +26,7 @@ app.on('window-all-closed', function () {
 // initialization and is ready to create browser windows.
 app.on('ready', function () {
 
-    app.setName('Template Builder');
+    app.setName('Pancho Villa');
 
     // Create the browser window.
     mainWindow = new BrowserWindow({ width: 800, height: 600 });
