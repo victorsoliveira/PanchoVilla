@@ -68,6 +68,51 @@
                 }
 
             });
+            handlebars.registerHelper('table', function(data) {
+
+                var getColumns = function(source){
+                    'use strict';
+                    var columns = [];
+
+                    source.forEach(function(el){
+                        Object.keys(el).forEach(function(value){
+                            columns.push(value);
+                        });
+                    });
+
+                    return columns.filter(function (item, pos) {return columns.indexOf(item) == pos});
+                };
+
+                var columns = getColumns(data);
+
+                var str = '<table>';
+
+                str += '<thead>';
+                str += '<tr>';
+
+                for (var c = 0; c < columns.length; c++) {
+                    str += '<th>' + columns[c] + '</th>';
+                }
+
+                str += '</tr>';
+                str += '</thead>';
+
+                str += '<tbody>';
+
+                for (var i = 0; i < data.length; i++ ) {
+                    str += '<tr>';
+                    for (var key in data[i]) {
+                        str += '<td>' + data[i][key] + '</td>';
+                    }
+                    str += '</tr>';
+                }
+
+                str += '</tbody>';
+                str += '</table>';
+
+                return new Handlebars.SafeString (str);
+
+            });
         }
 
     }
