@@ -15,7 +15,7 @@
             register: register
         };
 
-        function register (){
+        function register() {
 
             handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options) {
 
@@ -110,9 +110,10 @@
                 str += '</tbody>';
                 str += '</table>';
 
-                return new Handlebars.SafeString (str);
+                return new handlebars.SafeString (str);
 
             });
+
         }
 
     }
